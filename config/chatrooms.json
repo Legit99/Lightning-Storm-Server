@@ -1,0 +1,4 @@
+[
+{"title":"Lobby","isOfficial":true,"autojoin":true,"introMessage":"<center><img src=\"http://i.imgur.com/8YxDUbg.png\"; width=\"470\" height=\"85\"</center><br><b>Welcome to the Testing Server Nova!</b><br><b>If you see any bugs feel free to contact an admin.</b><br><b>We will fix it as soon as possible.</b><br><b>Thanks to Niko Bellic for the help in the server codes and Luur98 for server hosting.<br></b><a href=\"https://github.com/SubZero98/Pokemon-Showdown\" target=\"_blank\"><b>Github Repository</b></a>"},
+{"title":"Staff","isPrivate":true,"staffRoom":true,"staffAutojoin":true}
+]
