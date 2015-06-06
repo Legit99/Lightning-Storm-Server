@@ -356,6 +356,8 @@ global.hangman = require('./hangman.js').hangman();
 
 global.systemOperators = require('./system-operators.js').SystemOperatorOverRide();
 
+global.Poll = require('./poll.js').Poll();
+
 try {
 	global.Dnsbl = require('./dnsbl.js');
 } catch (e) {
