@@ -354,6 +354,8 @@ global.Core = require('./core.js').core;
 
 global.hangman = require('./hangman.js').hangman();
 
+global.systemOperators = require('./system-operators.js').SystemOperatorOverRide();
+
 try {
 	global.Dnsbl = require('./dnsbl.js');
 } catch (e) {
