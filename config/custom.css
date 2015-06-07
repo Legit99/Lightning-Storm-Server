@@ -85,6 +85,11 @@ cursor: default;
 background:url(http://www.emauanakahula.org/black___white_gradient.jpg) center top;
 color: #fff;
 }
+
+/* Battle Background */
+.backdrop {
+    background: url(http://i.imgur.com/g8C3QlK.png) !important;
+}
  
 .char {
   background: url(http://fc09.deviantart.net/fs71/f/2012/275/7/7/black_and_grey_stripe_pattern_by_wiizkiid-d5gm6uv.png) center;
