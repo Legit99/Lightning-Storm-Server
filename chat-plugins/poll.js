@@ -3,7 +3,7 @@
  */
  
  //This is the line that controls what tiers are in tierpoll !_!
- var tiers = 'other, ru, tier shift, [Gen 5] OU, [Gen 5] Smogon Doubles, random doubles, random triples, custom, reg1v1, lc, nu, cap, cc, oumono, doubles, balanced hackmons, hackmons, ubers, random battle, ou, cc1v1, uu, anything goes, super staff bros, inverse', random ubers, random haxmons, random lc, random monotype, random sky battle, challenge cup 2vs2 metronome, challenge cup metronome';
+ var tiers = 'other, ru, tier shift, [Gen 5] OU, [Gen 5] Smogon Doubles, random doubles, random triples, custom, reg1v1, lc, nu, cap, cc, oumono, doubles, balanced hackmons, hackmons, ubers, random battle, ou, cc1v1, uu, anything goes, super staff bros,  inverse, random ubers, random haxmons, random lc, random monotype, random sky battle, challenge cup 2vs2 metronome, challenge cup metronome';
  
  function splint(target) {
  	var cmdArr = target.split(",");
