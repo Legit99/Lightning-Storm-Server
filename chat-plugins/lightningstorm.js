@@ -395,6 +395,81 @@ exports.commands = {
 		}
 	},
 
+        clearall: function (target, room, user) {
+        if (!this.can('makeroom')) return this.sendReply('/clearall - Access denied.');
+        var len = room.log.length,
+            users = [];
+        while (len--) {
+            room.log[len] = '';
+        }
+        for (var user in room.users) {
+            users.push(user);
+            Users.get(user).leaveRoom(room, Users.get(user).connections[0]);
+        }
+        len = users.length;
+        setTimeout(function() {
+            while (len--) {
+                Users.get(users[len]).joinRoom(room, Users.get(users[len]).connections[0]);
+            }
+        }, 1000);
+    },
+
+
+};
+
+        model: 'sprite',
+sprite: function(target, room, user) {
+        if (!this.canBroadcast()) return;
+		var targets = target.split(',');
+			target = targets[0];
+				target1 = targets[1];
+if (target.toLowerCase().indexOf(' ') !== -1) {
+target.toLowerCase().replace(/ /g,'-');
+}
+        if (target.toLowerCase().length < 4) {
+        return this.sendReply('Model not found.');
+        }
+		var numbers = ['1','2','3','4','5','6','7','8','9','0'];
+		for (var i = 0; i < numbers.length; i++) {
+		if (target.toLowerCase().indexOf(numbers) == -1 && target.toLowerCase() !== 'porygon2' && !target1) {
+        
+        
+		
+		if (target && !target1) {
+        return this.sendReply('|html|<img src = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+        }
+	if (toId(target1) == 'back' || toId(target1) == 'shiny' || toId(target1) == 'front') {
+		if (target && toId(target1) == 'back') {
+        return this.sendReply('|html|<img src = "http://play.pokemonshowdown.com/sprites/xyani-back/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+		}
+		if (target && toId(target1) == 'shiny') {
+        return this.sendReply('|html|<img src = "http://play.pokemonshowdown.com/sprites/xyani-shiny/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+		}
+		if (target && toId(target1) == 'front') {
+        return this.sendReply('|html|<img src = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+	}
+	}
+	} else {
+	return this.sendReply('Model not found.');
+	}
+	}
+	}, 
+
+        
+
+        masspm: 'pmall',
+    pmall: function (target, room, user) {
+        if (!this.can('pmall')) return;
+        if (!target) return this.parse('/help pmall');
+
+        var pmName = '~Lightning Storm Server PM';
+
+        for (var i in Users.users) {
+            var message = '|pm|' + pmName + '|' + Users.users[i].getIdentity() + '|' + target;
+            Users.users[i].send(message);
+        }
+    },
+
 	flogout: 'forcelogout',
 	forcelogout: function (target, room, user) {
 		if (!target) return this.sendReply('/forcelogout [username], [reason] OR /flogout [username], [reason] - Reason is optional.');
